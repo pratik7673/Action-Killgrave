@@ -32,6 +32,6 @@ jobs:
         run: get-module
       - name: Run a multi-line script
         shell: pwsh
-        run: Write-Host "appname" (git config --get remote.origin.url) -replace '.*/' -replace '.git'
+        run: (git config --get remote.origin.url) -replace '.*/' -replace '.git'
       - name: print end results
         run: echo "pipe ends"
