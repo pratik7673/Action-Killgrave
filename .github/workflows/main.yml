@@ -22,13 +22,14 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: check out repository code
+      #Get-Service | Where-Object {$_.Status -eq 'Running'} |
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it (github actions need workflow to read)
         uses: actions/checkout@v3
       # Runs a single command using the runners shell
       - name: Perform a test from command line
         #shell Configures the job to use PowerShell when running the run commands.
         shell: pwsh   
-        run: Get-Service | Where-Object {$_.Status -eq 'Running'}             
+        run: get-module
       - name: Run a multi-line script
         shell: pwsh
         run: Write-Host "appname" (git config --get remote.origin.url) -replace '.*/' -replace '.git'
