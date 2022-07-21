@@ -29,7 +29,7 @@ jobs:
       - name: Perform a test from command line
         #shell Configures the job to use PowerShell when running the run commands.
         shell: pwsh   
-        run: get-module
+        run: get-module| get-config
       - name: fetch application name from Git
         shell: pwsh
         run: (git config --get remote.origin.url) -replace '.*/' -replace '.git'
