@@ -28,7 +28,7 @@ jobs:
       - name: Perform a test from command line
         #shell Configures the job to use PowerShell when running the run commands.
         shell: pwsh   
-        run: Get-Service              
+        run: Get-Service | Where-Object {$_.Status -eq 'Running'}             
       - name: Run a multi-line script
         shell: pwsh
         run: Write-Host "appname" (git config --get remote.origin.url) -replace '.*/' -replace '.git'
