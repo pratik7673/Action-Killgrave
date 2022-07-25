@@ -13,5 +13,7 @@ jobs:
    steps:
      - uses: actions/checkout@v2
      - name: Tag and push current repo code
-       run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
-
+       run: |
+         git tag $(date +'%Y-%m-%d')
+         git push origin $(date +'%Y-%m-%d')
+       
