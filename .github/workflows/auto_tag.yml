@@ -13,7 +13,5 @@ jobs:
    steps:
      - uses: actions/checkout@v2
      - name: Tag and push current repo code
-     -  run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
-     -  run: |
-         git tag ${{ steps.date.outputs.date }}}
-         git push origin ${{ steps.date.outputs.date }}
+     - run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+
